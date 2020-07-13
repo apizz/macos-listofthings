@@ -5,6 +5,12 @@ Just a list of macOS things I don't want to forget ...
 ## Index
 
 - [SIP](#sip)
+- [Firewall](#firewall)
+
+### Firewall
+
+- Binary to run commands that live in System Preferences > Firewall & the contained Firewall options
+  - `/usr/libexec/ApplicationFirewall/socketfilterfw`
 
 ### SIP
 
