@@ -4,10 +4,17 @@ Just a list of macOS things I don't want to forget ...
 
 ## Index
 
-- [SIP](#sip)
+- [Apps](#apps)
 - [Firewall](#firewall)
 - [Icons](#icons)
 - [PPPC](#pppc)
+- [SIP](#sip)
+- [Users](#users)
+
+### Apps
+
+- Find an app's path location based on its bundle ID
+  - `mdfind kMDItemCFBundleIdentifier = "<app bundle id>"`
 
 ### Firewall
 
@@ -35,3 +42,11 @@ Just a list of macOS things I don't want to forget ...
   - `cat /System/Library/Sandbox/rootless.conf`
   - `cat /System/Library/Sandbox/Compatibility.bundle/Contents/Resources/paths`
 
+### Users
+
+- Get all local users above UID 500
+  - `dscl . list /Users UniqueID | awk '$2 > 500 {print $1}'`
+- Get all network / AD users (above UID 1000)
+  - `dscl . list /Users UniqueID | awk '$2 > 1000 {print $1}'`
+- Get a user's home directory path
+  - `dscl . read /Users/<user> NFSHomeDirectory | awk '{print $NF}'`
